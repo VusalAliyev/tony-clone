@@ -1,0 +1,142 @@
+nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  z-index: 999;
+
+  .active {
+    color: $primaryColor;
+  }
+
+  .container {
+    @include flex(space-between, center, row);
+    margin: 0 auto;
+    width: 1140px;
+    position: relative;
+  }
+
+  .button {
+    @include flex(center, center, column);
+    background: $primaryColor;
+    height: 40px;
+    width: 40px;
+    padding: 5px 0;
+    cursor: pointer;
+    outline: black;
+    display: none;
+
+    span {
+      display: inline-block;
+      width: 25px;
+      height: 2px;
+      background: #ffffff;
+      margin: 4px 0;
+    }
+  }
+
+  a {
+    display: inline-block;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 60px;
+    text-transform: uppercase;
+    color: #000000;
+  }
+
+  ul {
+    @include flex(flex-end, flex-start, row);
+
+    li {
+      font-weight: 400;
+
+      a {
+        font-size: 13px;
+        line-height: 60px;
+        font-weight: 500;
+        padding: 0 15px;
+
+        &:hover {
+          color: $primaryColor;
+        }
+      }
+    }
+  }
+}
+
+@include lg {
+  nav {
+    .container {
+      width: 960px;
+    }
+  }
+}
+
+@include md {
+  nav {
+    .container {
+      width: 720px;
+    }
+
+    .button {
+      display: flex;
+    }
+
+    ul {
+      position: absolute;
+      top: 100%;
+      flex-direction: column;
+      background: #ffffff;
+      width: 100%;
+      border: 0px solid $borderColor;
+      transition: all 0.3s;
+      line-height: 1.6;
+      max-height: 0;
+      overflow: hidden;
+
+      li {
+        border-bottom: 1px solid $borderColor;
+        width: 95%;
+        margin: 0 auto;
+
+        a {
+          line-height: 1.6;
+          padding: 10px 0;
+        }
+
+        &:last-child {
+          border-bottom: none;
+          margin-bottom: 5px;
+        }
+      }
+    }
+
+    .show {
+      overflow: auto;
+      height: auto;
+      max-height: 600px;
+      border: 1px solid $borderColor;
+    }
+  }
+  .nav-height {
+    height: 330px;
+  }
+}
+
+@include sm {
+  nav {
+    .container {
+      width: 540px;
+    }
+  }
+}
+
+@include xs {
+  nav {
+    .container {
+      width: 100%;
+      padding: 0 15px;
+    }
+  }
+}

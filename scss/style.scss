@@ -1,0 +1,20 @@
+@import "./variables";
+@import "./reset";
+@import "./mixins";
+@import "./map";
+@import "./media";
+@import "./nav";
+@import "./home";
+@import "./about";
+@import "./skills";
+@import "./services";
+@import "./portfolio";
+@import "./testimonials";
+@import "./blog";
+@import "./footer";
+@import "./contact";
+
+body,
+html {
+  scroll-behavior: smooth;
+}

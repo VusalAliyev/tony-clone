@@ -1,0 +1,222 @@
+#skills {
+  .container {
+    @include flex(center, flex-start, column);
+    width: 1140px;
+    margin: 0 auto;
+    padding: 100px 0;
+  }
+
+  .skills-up {
+    h3 {
+      font-size: 35px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        height: 2px;
+        background: $primaryColor;
+        width: 50px;
+      }
+    }
+
+    p {
+      font-size: 14px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #555a64;
+      margin-top: 15px;
+    }
+  }
+
+  .skills-down {
+    @include flex(start, center, row);
+    position: relative;
+    margin-top: 50px;
+    width: 100%;
+
+    .skills-animation {
+      width: 60%;
+
+      .skill-bar {
+        @include flex(space-around, start, column);
+        margin-bottom: 30px;
+      }
+
+      .animation {
+        position: relative;
+        height: 5px;
+        width: 80%;
+        background-color: #eee;
+        border-radius: 2px;
+      }
+
+      p {
+        position: absolute;
+        top: -600%;
+        right: 0;
+      }
+
+      span {
+        position: relative;
+        display: inline-block;
+        width: 20%;
+        height: 100%;
+        transform: translateY(-175%);
+        background-color: $primaryColor;
+        border-radius: 5px;
+        transition: all 1s ease-in-out;
+      }
+
+      .increase-width1 {
+        width: 92%;
+      }
+
+      .increase-width2 {
+        width: 75%;
+      }
+
+      .increase-width3 {
+        width: 86%;
+      }
+
+      .increase-width4 {
+        width: 88%;
+      }
+
+      h6 {
+        font-size: 16px;
+        color: $fontColor;
+        font-weight: 500;
+        line-height: 1.2;
+        margin-bottom: 10px;
+      }
+    }
+
+    .skills-info {
+      @include flex(center, center, row);
+      width: 40%;
+
+      .feature {
+        @include flex(center, center, row);
+        border: 1px solid $borderColor;
+        margin: 20px 0;
+        padding: 10px 15px;
+        border-radius: 5px;
+        background: #ffffff;
+        border: 2px solid $primaryColor;
+        box-shadow: 0px 30px 60px 0px rgba(38, 59, 94, 0.1);
+
+        div {
+          margin: 10px 0;
+        }
+
+        i {
+          line-height: 50px;
+          font-size: 30px;
+          width: 50px;
+          height: 50px;
+          color: $primaryColor;
+        }
+
+        h5 {
+          font-size: 16px;
+          margin: 0 20px 0 0;
+          color: $fontColor;
+          font-weight: 600;
+        }
+      }
+
+      div {
+        margin: 0 10px;
+      }
+    }
+  }
+}
+
+@include lg {
+  #skills {
+    .container {
+      width: 960px;
+    }
+  }
+}
+
+@include md {
+  #skills {
+    .container {
+      width: 720px;
+    }
+
+    .skills-down {
+      @include flex(start, center, column);
+    }
+
+    .skills-down {
+      .skills-animation {
+        width: 100%;
+
+        .animation {
+          width: 100%;
+        }
+      }
+
+      .skills-info {
+        width: 100%;
+
+        .info-icon {
+          width: 50px;
+        }
+
+        i {
+          line-height: 50px;
+          font-size: 30px;
+          width: 50px;
+          height: 50px;
+          color: $primaryColor;
+        }
+
+        h5 {
+          margin: 0;
+        }
+
+        div {
+          width: 100%;
+        }
+
+        .feature {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@include sm {
+  #skills {
+    .container {
+      width: 540px;
+    }
+    .skills-down {
+      .skills-animation {
+        span {
+          width: 25%;
+        }
+      }
+    }
+  }
+}
+
+@include xs {
+  #skills {
+    .container {
+      width: 100%;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+}

@@ -1,0 +1,223 @@
+#contact {
+  background-color: #eaedf2;
+
+  .container {
+    @include flex(center, flex-start, column);
+    width: 1140px;
+    margin: 0 auto;
+    padding: 100px 0;
+  }
+
+  .contact-up {
+    h3 {
+      font-size: 35px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        height: 2px;
+        background: $primaryColor;
+        width: 50px;
+      }
+    }
+
+    p {
+      font-size: 14px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #555a64;
+      margin-top: 15px;
+    }
+  }
+
+  .contact-down {
+    margin-top: 50px;
+    @include flex(start, center, row);
+    width: 100%;
+
+    h4 {
+      font-weight: 600;
+      font-size: 18px;
+      text-transform: uppercase;
+      color: $fontColor;
+      margin-bottom: 20px;
+    }
+  }
+
+  .form {
+    width: 75%;
+    border-radius: 5px;
+    background-color: #ffffff;
+    padding: 30px 30px 50px 30px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+    form > div:first-child {
+      display: flex;
+      margin-top: 30px;
+
+      div {
+        margin-right: 20px;
+      }
+    }
+  }
+
+  .form-group {
+    height: 60px;
+
+    input,
+    textarea {
+      border: none;
+      outline: none;
+      border-bottom: 1px solid #ccc;
+    }
+
+    input {
+      width: 100%;
+      padding-bottom: 10px;
+
+      &::placeholder {
+        font-size: 16px;
+      }
+    }
+
+    textarea {
+      width: 100%;
+
+      &::placeholder {
+        font-size: 16px;
+      }
+    }
+
+    button {
+      padding: 15px 20px;
+      background-color: $primaryColor;
+      transform: translateY(100%);
+      text-transform: uppercase;
+      color: #ffffff;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      transition: all ease-in-out 0.55s;
+
+      &:hover {
+        background-color: #000000;
+      }
+    }
+  }
+
+  .g-1 {
+    width: 50%;
+    display: inline-block;
+  }
+
+  .g-2 {
+    width: 50%;
+    display: inline-block;
+  }
+
+  .adresses {
+    @include flex(space-between, center, column);
+    flex-grow: 1;
+    height: 100%;
+
+    .adress {
+      @include flex(center, center, row);
+      width: 80%;
+      height: 100px;
+      margin-left: 20px !important;
+      padding: 0 20px 0 0;
+      background-color: #ffffff;
+      border-radius: 5px;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+      &:nth-child(2) {
+        margin: 33px 0;
+      }
+    }
+
+    .icon {
+      justify-self: start;
+      align-self: start;
+      margin: 20px 10px;
+    }
+
+    i {
+      font-size: 20px;
+      padding: 10px;
+      margin-left: 5px;
+      border-radius: 50%;
+      color: #fff;
+      background-color: $primaryColor;
+    }
+
+    .body {
+      width: 80%;
+    }
+
+    h6 {
+      font-size: 16px;
+      color: $fontColor;
+      margin: 5px 0;
+    }
+
+    p {
+      opacity: 0.5;
+    }
+  }
+}
+
+@include lg {
+  #contact {
+    .container {
+      width: 960px;
+    }
+  }
+}
+
+@include md {
+  #contact {
+    .container {
+      width: 720px;
+    }
+
+    .contact-down {
+      flex-direction: column;
+
+      .form {
+        width: 100%;
+      }
+      .adresses {
+        width: 100%;
+        margin-top: 20px;
+
+        .adress {
+          margin: 10px 0;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@include sm {
+  #contact {
+    .container {
+      width: 540px;
+    }
+  }
+}
+
+@include xs {
+  #contact {
+    .container {
+      width: 100%;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+}

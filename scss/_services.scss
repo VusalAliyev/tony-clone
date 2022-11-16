@@ -1,0 +1,151 @@
+#services {
+  background-color: #eaedf2;
+
+  .container {
+    @include flex(center, flex-start, column);
+    width: 1140px;
+    margin: 0 auto;
+    padding: 100px 0;
+  }
+
+  .services-up {
+    h3 {
+      font-size: 35px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        height: 2px;
+        background: $primaryColor;
+        width: 50px;
+      }
+    }
+
+    p {
+      font-size: 14px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #555a64;
+      margin-top: 15px;
+    }
+  }
+
+  .cards {
+    @include flex(space-between, center, row);
+    flex-wrap: wrap;
+    margin-top: 50px;
+
+    .feature {
+      @include flex(center, start, column);
+      margin-bottom: 30px;
+      padding: 0 20px;
+      width: 30%;
+      background-color: #ffffff;
+      border-radius: 5px;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      transition: ease all 0.35s;
+
+      &:hover {
+        transform: translateY(-10px);
+        background-color: $primaryColor;
+
+        .icon {
+          border: 1px dotted #ffffff;
+        }
+
+        i {
+          color: #ffffff;
+        }
+
+        h5 {
+          color: #ffffff;
+        }
+
+        p {
+          color: #ffffff;
+          opacity: 0.5;
+        }
+      }
+    }
+
+    .icon {
+      @include flex(center, center, row);
+      margin: 30px 20px;
+      width: 70px;
+      height: 70px;
+      border: 1px dotted $primaryColor;
+      border-radius: 50%;
+    }
+
+    i {
+      font-size: 33px;
+      color: $primaryColor;
+    }
+
+    h5 {
+      color: $fontColor;
+      font-weight: 500;
+      font-size: 16px;
+      margin: 10px 20px;
+      margin-top: 0;
+    }
+
+    p {
+      margin: 10px 20px;
+      line-height: 1.6;
+      color: #555a64;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@include lg {
+  #services {
+    .container {
+      width: 960px;
+    }
+  }
+}
+
+@include md {
+  #services {
+    .container {
+      width: 720px;
+    }
+
+    .cards {
+      .feature {
+        width: 47%;
+      }
+    }
+  }
+}
+
+@include sm {
+  #services {
+    .container {
+      width: 540px;
+    }
+  }
+}
+
+@include xs {
+  #services {
+    .container {
+      width: 100%;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    .cards {
+      .feature {
+        width: 100%;
+      }
+    }
+  }
+}

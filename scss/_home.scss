@@ -1,0 +1,252 @@
+#home {
+  margin-top: 50px;
+  @include flex(center, center, row);
+  position: relative;
+
+  .container {
+    @include flex(space-between, center, row);
+    width: 1140px;
+    margin: 0 auto;
+
+    .home-text {
+      width: 50%;
+    }
+
+    .home-pic {
+      width: 50%;
+    }
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+    margin: 50px 0;
+  }
+
+  h6 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: 500;
+  }
+
+  h1 {
+    font-size: 60px;
+    margin-bottom: 15px;
+  }
+
+  .animated-text {
+    display: flex;
+    margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+    height: 30px;
+
+    h2 {
+      font-size: 20px;
+      font-weight: 500;
+      color: $fontColor;
+      line-height: 1.2;
+    }
+
+    li {
+      position: relative;
+      top: 0px;
+      font-size: 20px;
+      line-height: 1.2;
+      color: $fontColor;
+      font-weight: 500;
+      margin-left: 10px;
+      border-bottom: 1px solid #000;
+      animation: slide 6s steps(2) infinite;
+
+      &:last-child {
+        margin-top: 10px;
+      }
+
+      span {
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          width: 100%;
+          height: 130%;
+          background-color: #ffffff;
+          border-left: 2px solid #000000;
+          animation: typing 3s steps(9) infinite;
+        }
+      }
+    }
+
+    @keyframes slide {
+      100% {
+        top: -70px;
+      }
+    }
+
+    @keyframes typing {
+      0% {
+        left: 0%;
+      }
+      75% {
+        left: 105%;
+      }
+    }
+  }
+
+  p {
+    color: rgba(9, 10, 12, 0.8);
+    font-size: 16px;
+    line-height: 1.6;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+  }
+
+  .work-btn,
+  .hire-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin: 30px 0;
+    cursor: pointer;
+    font-size: 14px;
+    transition: ease-in-out all 0.55s;
+  }
+
+  .work-btn {
+    background-color: $primaryColor;
+    margin-right: 12px;
+    padding: 12px 20px;
+
+    &:hover {
+      background-color: #000000;
+    }
+  }
+
+  .hire-btn {
+    background-color: transparent;
+    border: 2px solid $primaryColor;
+    color: $primaryColor;
+
+    &:hover {
+      background-color: $primaryColor;
+      color: #ffffff;
+    }
+  }
+
+  .arrow a {
+    @include flex(center, center, row);
+    position: absolute;
+    bottom: 3%;
+    left: 50%;
+    width: 35px;
+    height: 35px;
+    background-color: $primaryColor;
+    border-radius: 50%;
+    animation: down 1s linear infinite;
+
+    @keyframes down {
+      from {
+        opacity: 1;
+        bottom: 7%;
+      }
+      to {
+        opacity: 0;
+        bottom: 3%;
+      }
+    }
+
+    i {
+      font-size: 25px;
+      color: #ffffff;
+    }
+  }
+}
+
+@include lg {
+  #home {
+    .container {
+      width: 960px;
+    }
+  }
+}
+
+@include md {
+  #home {
+    height: 90vh;
+
+    .container {
+      width: 720px;
+    }
+
+    .animated-text {
+      h2 {
+        font-size: 18px;
+      }
+
+      li {
+        font-size: 18px;
+      }
+    }
+
+    h6 {
+      font-size: 15px;
+    }
+
+    h1 {
+      font-size: 40px;
+    }
+
+    p {
+      font-size: 15px;
+    }
+  }
+}
+
+@include sm {
+  #home {
+    margin-top: 120px;
+    height: auto;
+    padding-bottom: 100px;
+
+    .container {
+      width: 540px;
+      flex-direction: column;
+
+      .home-text {
+        width: 100%;
+        padding: 0 50px;
+      }
+
+      .home-pic {
+        width: 100%;
+      }
+    }
+
+    .animated-text {
+      h2 {
+        font-size: 16px;
+      }
+
+      li {
+        font-size: 16px;
+      }
+    }
+
+    img {
+      margin: 0;
+    }
+  }
+}
+
+@include xs {
+  #home {
+    .container {
+      width: 100%;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+}
